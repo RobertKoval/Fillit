@@ -6,18 +6,26 @@
 #    By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/22 19:22:51 by rkoval            #+#    #+#              #
-#    Updated: 2018/01/22 19:50:18 by rkoval           ###   ########.fr        #
+#    Updated: 2018/01/22 22:15:51 by rkoval           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
-SRC = main.c verification.c \
-      prepare.c makebox.c fillthebox.c \
-      utillity.c makemap.c filler.c
-
-
+SRC = verification.c prepare.c makebox.c fillthebox.c \
+      utillity.c makemap.c filler.c main.c
 OBJ_SRC = $(SRC:.c=.o)
-CFLAGS = -o $(NAME) -Wall -Werror -Wextra -I.
+OFLAGS = -c -Wall -Werror -Wextra -I.
 
-all: $(SRC)
-	gcc $(CFLAGS) $(SRC)
+all: $(NAME)
+
+$(NAME):
+	gcc $(OFLAGS) $(SRC)
+	gcc $(OBJ_SRC) -o $(NAME)
+
+clean:
+	rm -f $(OBJ_SRC)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
