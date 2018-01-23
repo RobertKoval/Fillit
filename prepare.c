@@ -90,6 +90,8 @@ static size_t	ft_isstartoffigure(const char *str, size_t i, size_t e)
 			return (i);
 		else if (str[i] == '#')
 			return (i);
+		else if (str[i + 1] == '#' && str[i + 10] == '#' && str[i + 6] == '#')
+			return (i);
 		else if (str[i + 5] == '#' && str[i + 2] == '#' && str[i + 1] != '\n')
 			return (i);
 		i++;
