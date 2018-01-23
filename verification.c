@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
+
 /*
  * Validation tetraminos for first and last '#'
  */
@@ -43,20 +43,31 @@ static size_t	ft_validn(const char *str)
 static size_t	ft_validtet(const char *str)
 {
 	size_t i;
+	size_t con;
+	size_t pos;
+
+	con = 0;
 	i = 0;
+	pos = 0;
 	while (str[i])
 	{
 		if (str[i] == '#')
 		{
-			if (str[i + 15] != '#' && str[i + 3] != '#' && str[i + 7] != '#'\
-				&& str[i + 5] != '#' && str[i + 6] != '#' && str[i + 11] != '#'\
-				&& str[i + 15] != '#' && str[i + 9] != '#' && \
-				str[i + 10] != '#')
+			if (i + 1 < pos + 19 && str[i + 1] == '#')
+				con++;
+			if (i + 5 < pos + 19 && str[i + 5] == '#')
+				con++;
+			if (i - 1 >= pos && str[i - 1] == '#')
+				con++;
+			if (i - 5 >= pos && str[i - 5] == '#')
+				con++;
+		}
+		if (str[i] == '\n' && (str[i + 1] == '\n' || str[i + 1] == '\0'))
+		{
+			pos += 21;
+			if (con != 6 && con != 8)
 				return (0);
-			else
-				while (!((str[i] == '\n' && \
-				str[i + 1] == '\n') || str[i + 1] == '\0'))
-					i++;
+			con = 0;
 		}
 		i++;
 	}
@@ -87,9 +98,9 @@ size_t			ft_validfile(const char *str)
 			p++;
 		i++;
 	}
-	if (t % 4 != 0)
+	if (t % 4 != 0 || p % 12 != 0 || i < 20)
 		return (0);
-	if (p % 12 != 0)
+	if (p / t != 3)
 		return (0);
 	if (!ft_validn(str))
 		return (0);
