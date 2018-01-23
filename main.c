@@ -24,16 +24,18 @@ int			main(int argc, char **argv)
 	char	buf[BUF_SIZE + 1];
 	int		red;
 
-	fd = open(argv[1], O_RDONLY);
 	if (argc != 2)
 		ft_error("usage: fillit input_file");
-	if (fd == -1)
+	if ((fd = open(argv[1], O_RDONLY)) == -1)
 		ft_error("error");
-	red = read(fd, buf, BUF_SIZE);
-	if (red == -1)
+	if ((red = read(fd, buf, BUF_SIZE)) == -1)
+	{
+		close(fd);
+		ft_error("error");
+	}
+	if (close(fd) == -1)
 		ft_error("error");
 	buf[red] = '\0';
-	close(fd);
 	if (!ft_validfile(buf))
 		ft_error("error");
 	else
