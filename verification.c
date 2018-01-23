@@ -98,9 +98,7 @@ size_t			ft_validfile(const char *str)
 			p++;
 		i++;
 	}
-	if (t % 4 != 0 || p % 12 != 0 || i < 20)
-		return (0);
-	if (p / t != 3)
+	if (t % 4 != 0 || p % 12 != 0 || i < 20 || p / t != 3)
 		return (0);
 	if (!ft_validn(str))
 		return (0);
