@@ -13,7 +13,7 @@
 #ifndef FILLIT_H
 # define FILLIT_H
 # include <fcntl.h>
-# include "libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 # define BUF_SIZE 550
 
 size_t	ft_validfile(const char *str);
