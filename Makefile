@@ -3,24 +3,43 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+         #
+#    By: robert <robert@student.unit.ua>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/22 19:22:51 by rkoval            #+#    #+#              #
-#    Updated: 2018/01/23 19:06:18 by rkoval           ###   ########.fr        #
+#    Updated: 2018/01/27 23:14:25 by robert           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
+
 SRC = verification.c prepare.c makebox.c fillthebox.c \
-      utillity.c makemap.c filler.c main.c
-OBJ_SRC = $(SRC:.c=.o)
-OFLAGS = -c -Wall -Werror -Wextra -I.
+		makemap.c filler.c main.c
+
+OBJ = $(SRC:.c=.o)
+INC = libft.h
+
+SRC_DIR = src
+OBJ_DIR = obj
+INC_DIR = includes
+
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
+OBJS = $(addprefix $(OBJ_DIR)/, $(OBJ))
+INCS = $(addprefix $(INC_DIR)/, $(INC))
+
+CFLAGS = -Wall -Werror -Wextra
+CPPFLAGS = -Iincludes
+LDFLAGS = -L./libft -llibft.a
+
+MAKELIB = cd libft && make
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(OFLAGS) $(SRC)
-	gcc $(OBJ_SRC) -o $(NAME)
+	$(MAKELIB)
+	gcc $(CFLAGS) -c $(SRCS) $(CFLAGS)
+	mkdir -p $(OBJ_DIR)
+	mv $(OBJ) $(OBJ_DIR)
+	gcc $(OBJS) -o $(NAME) $(CFLAGS) $(LDFLAGS)
 
 clean:
 	rm -f $(OBJ_SRC)
