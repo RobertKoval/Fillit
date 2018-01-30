@@ -27,7 +27,9 @@ size_t	ft_strlen(const char *str)
 			return (i + 3);
 		if (str[i + 4] == '\0')
 			return (i + 4);
-		i++;
+		if (str[i + 5] == '\0')
+			return (i + 5);
+		i += 5;
 	}
 	return (i);
 }
