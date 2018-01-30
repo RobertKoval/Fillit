@@ -47,7 +47,7 @@ char		**ft_strsplit(char const *s, char c)
 	w_con = ft_wcount((char*)s, c);
 	i = 0;
 	s_ptr = 0;
-	array = (char**)malloc(sizeof(char*) * w_con + 1);
+	array = (char**)malloc(sizeof(char*) * w_con + 8);
 	if (!array)
 		return (NULL);
 	while (i < w_con)
