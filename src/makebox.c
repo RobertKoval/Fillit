@@ -20,7 +20,7 @@ static void	ft_setcount(size_t *a, size_t *b, size_t *c)
 }
 
 /*
- * Make 3-D box with figures (width*height)
+ * Make 3-D box with figures (width x height)
  */
 
 char		***ft_makebox(size_t t_count, const size_t *coll)

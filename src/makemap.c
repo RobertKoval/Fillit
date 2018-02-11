@@ -43,7 +43,10 @@ char	**ft_initmap(size_t size)
 	{
 		j = 0;
 		if(!(array[i] = (char*)malloc(sizeof(char) * size + 2)))
+		{
+			free(array);
 			return (NULL);
+		}
 		while (j < size)
 		{
 			array[i][j] = '.';

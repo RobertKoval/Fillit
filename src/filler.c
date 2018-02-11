@@ -92,7 +92,7 @@ static size_t	ft_solver(char **map, char ***box, size_t m_size, size_t *coll)
 			if (ft_canpaste(map, r, c, *box))
 			{
 				ft_add(map, r, c, *box);
-				if(ft_solver(map, box + 1, m_size, coll + 3))
+				if (ft_solver(map, box + 1, m_size, coll + 3))
 					return  (1);
 				ft_remove(map, r, c, *box);
 			}

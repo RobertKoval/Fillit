@@ -13,7 +13,7 @@
 #include "../includes/fillit.h"
 
 /*
- * Validation tetraminos for first and last '#'
+ * Validate tetraminos for first and last '#'
  */
 static size_t	ft_validn(const char *str)
 {

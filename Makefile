@@ -39,7 +39,7 @@ $(NAME):
 	gcc -c $(SRCS) $(CFLAGS) $(CPPFLAGS)
 	mkdir -p $(OBJ_DIR)
 	mv $(OBJ) $(OBJ_DIR)
-	gcc $(OBJS) $(CFLAGS)  -o $(NAME) $(LDFLAGS)
+	gcc $(OBJS) $(CFLAGS) -o $(NAME) $(LDFLAGS)
 
 clean:
 	rm -rf $(OBJ_DIR)

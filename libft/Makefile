@@ -44,8 +44,8 @@ all: $(NAME)
 	
 $(NAME):
 	gcc $(CFLAGS) -c $(SRCS) $(CPPFLAGS)
-	mkdir -p $(OBJ_DIR)
-	mv $(OBJ) $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
+	@mv $(OBJ) $(OBJ_DIR)
 	ar rc $(NAME) $(OBJS)
 
 clean:
