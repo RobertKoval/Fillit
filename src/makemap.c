@@ -13,7 +13,7 @@
 #include "../includes/fillit.h"
 
 /*
- * Find minimum size of map (t_count * 4)
+ * Find minimum size of map (number of figures (f) * 4)
  */
 
 size_t	ft_mapsize(size_t f)
@@ -59,10 +59,6 @@ char	**ft_initmap(size_t size)
 	array[i] = NULL;
 	return (array);
 }
-
-/*
- * Free map after using
- */
 
 void	ft_cleanmap(char **map)
 {

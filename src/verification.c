@@ -15,6 +15,7 @@
 /*
  * Validate tetraminos for first and last '#'
  */
+
 static size_t	ft_validn(const char *str)
 {
 	size_t n;
