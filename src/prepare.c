@@ -6,15 +6,15 @@
 /*   By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 19:22:51 by rkoval            #+#    #+#             */
-/*   Updated: 2018/01/22 19:52:48 by rkoval           ###   ########.fr       */
+/*   Updated: 2018/02/13 13:04:27 by rkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
 /*
- * Find number of figures in file
- */
+** Find number of figures in file
+*/
 
 size_t			ft_tetcount(const char *str)
 {
@@ -53,7 +53,7 @@ static size_t	ft_fig_width(const char *str, size_t s)
 			if (str[j] == '#')
 			{
 				w++;
-				break;
+				break ;
 			}
 			j += 5;
 			i++;
@@ -63,12 +63,13 @@ static size_t	ft_fig_width(const char *str, size_t s)
 	}
 	return (w);
 }
+
 static size_t	ft_fig_height(const char *str, size_t s)
 {
 	size_t h;
 
 	h = 0;
-	while (!(str[s] == '\n' && (str[s + 1] == '\n'|| str[s + 1] == '\0')))
+	while (!(str[s] == '\n' && (str[s + 1] == '\n' || str[s + 1] == '\0')))
 	{
 		if (str[s] == '#')
 		{
@@ -100,11 +101,11 @@ static size_t	ft_isstartoffigure(const char *str, size_t i, size_t e)
 }
 
 /*
- *				Make array with parameter's of figures
- *	0,3,6,9 -> S - start of figure in str
- *	1,4,7,10 -> C - width                       //arr[s][r][c]
- *	2,5,8,11 -> R - height
- */
+**				Make array with parameter's of figures
+**	0,3,6,9 -> S - start of figure in str
+**	1,4,7,10 -> C - width                       //arr[s][r][c]
+**	2,5,8,11 -> R - height
+*/
 
 size_t			*ft_collect_size(const char *str, size_t t_count)
 {

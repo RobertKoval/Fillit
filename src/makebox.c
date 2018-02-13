@@ -6,7 +6,7 @@
 /*   By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 19:22:51 by rkoval            #+#    #+#             */
-/*   Updated: 2018/01/22 19:50:04 by rkoval           ###   ########.fr       */
+/*   Updated: 2018/02/13 13:15:26 by rkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static void	ft_setcount(size_t *a, size_t *b, size_t *c)
 }
 
 /*
- * Make 3-D box with figures (width x height)
- */
+** Make 3-D box with figures (width x height)
+*/
 
 char		***ft_makebox(size_t t_count, const size_t *coll)
 {
@@ -53,8 +53,8 @@ char		***ft_makebox(size_t t_count, const size_t *coll)
 }
 
 /*
- * Free 3-D box after using
- */
+** Free 3-D box after using
+*/
 
 void		ft_cleanbox(char ***box, const size_t *coll)
 {

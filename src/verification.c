@@ -6,15 +6,15 @@
 /*   By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 19:22:51 by rkoval            #+#    #+#             */
-/*   Updated: 2018/01/22 20:10:54 by rkoval           ###   ########.fr       */
+/*   Updated: 2018/02/13 13:13:42 by rkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
 /*
- * Validate tetraminos for first and last '#'
- */
+** Validate tetraminos for first and last '#'
+*/
 
 static size_t	ft_validn(const char *str)
 {
@@ -23,7 +23,7 @@ static size_t	ft_validn(const char *str)
 
 	n = 0;
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		if (str[i] == '\n')
 			n++;
@@ -41,6 +41,18 @@ static size_t	ft_validn(const char *str)
 	return (1);
 }
 
+static void		ft_checking(size_t *con, const char *str, size_t i, size_t pos)
+{
+	if (i + 1 < pos + 19 && str[i + 1] == '#')
+		*con += 1;
+	if (i + 5 < pos + 19 && str[i + 5] == '#')
+		*con += 1;
+	if (i - 1 >= pos && str[i - 1] == '#')
+		*con += 1;
+	if (i - 5 >= pos && str[i - 5] == '#')
+		*con += 1;
+}
+
 static size_t	ft_validtet(const char *str)
 {
 	size_t i;
@@ -53,16 +65,7 @@ static size_t	ft_validtet(const char *str)
 	while (str[i])
 	{
 		if (str[i] == '#')
-		{
-			if (i + 1 < pos + 19 && str[i + 1] == '#')
-				con++;
-			if (i + 5 < pos + 19 && str[i + 5] == '#')
-				con++;
-			if (i - 1 >= pos && str[i - 1] == '#')
-				con++;
-			if (i - 5 >= pos && str[i - 5] == '#')
-				con++;
-		}
+			ft_checking(&con, str, i, pos);
 		if (str[i] == '\n' && (str[i + 1] == '\n' || str[i + 1] == '\0'))
 		{
 			pos += 21;
@@ -76,9 +79,9 @@ static size_t	ft_validtet(const char *str)
 }
 
 /*
- * Validation file for '.' and '#' count and
- * checking if there are some other symbols
- */
+** Validation file for '.' and '#' count and
+** checking if there are some other symbols
+*/
 
 size_t			ft_validfile(const char *str)
 {

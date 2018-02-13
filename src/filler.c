@@ -6,7 +6,7 @@
 /*   By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 19:22:50 by rkoval            #+#    #+#             */
-/*   Updated: 2018/01/22 19:46:50 by rkoval           ###   ########.fr       */
+/*   Updated: 2018/02/13 13:14:36 by rkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ static size_t	ft_canpaste(char **map, size_t r, size_t c, char **box)
 		j = 0;
 		while (box[i][j])
 		{
-			if ((map[r + i] == NULL || box[i][j] != '.') &&\
-			 map[r + i][c + j] != '.')
+			if ((map[r + i] == NULL || box[i][j] != '.') && \
+					map[r + i][c + j] != '.')
 				return (0);
 			j++;
 		}
@@ -73,8 +73,8 @@ static void		ft_remove(char **map, size_t r, size_t c, char **box)
 }
 
 /*
- *  Backtracking algorithm for filling map
- */
+**  Backtracking algorithm for filling map
+*/
 
 static size_t	ft_solver(char **map, char ***box, size_t m_size, size_t *coll)
 {
@@ -85,15 +85,15 @@ static size_t	ft_solver(char **map, char ***box, size_t m_size, size_t *coll)
 	c = 0;
 	if (!*box)
 		return (1);
-	while(r + coll[2] - 1 < m_size)
+	while (r + coll[2] - 1 < m_size)
 	{
-		while(c + coll[1] - 1 < m_size)
+		while (c + coll[1] - 1 < m_size)
 		{
 			if (ft_canpaste(map, r, c, *box))
 			{
 				ft_add(map, r, c, *box);
 				if (ft_solver(map, box + 1, m_size, coll + 3))
-					return  (1);
+					return (1);
 				ft_remove(map, r, c, *box);
 			}
 			c++;

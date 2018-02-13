@@ -6,13 +6,13 @@
 /*   By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 19:22:51 by rkoval            #+#    #+#             */
-/*   Updated: 2018/01/22 19:48:24 by rkoval           ###   ########.fr       */
+/*   Updated: 2018/02/13 13:18:44 by rkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-static void	ft_initvar (size_t *a, size_t *b, size_t *c, size_t *d)
+static void	ft_initvar(size_t *a, size_t *b, size_t *c, size_t *d)
 {
 	if (a != 0)
 		*a = 0;
