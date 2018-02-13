@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkoval <rkoval@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 13:03:47 by rkoval            #+#    #+#             */
-/*   Updated: 2017/11/23 00:48:08 by rkoval           ###   ########.fr       */
+/*   Updated: 2018/02/13 12:59:06 by rkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # define ABS(NUM)	(NUM > 0 ? NUM : -NUM)
 # define MIN(a, b)	((a < b) ? a : b)
 # define MAX(a, b)	((a > b) ? a : b)
-
 
 /*
 ** BASE FUNCTIONS
