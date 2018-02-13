@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robert <robert@student.unit.ua>            +#+  +:+       +#+        */
+/*   By: rkoval <rkoval@student.unit.ua>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 19:22:50 by rkoval            #+#    #+#             */
-/*   Updated: 2018/01/27 23:16:08 by robert           ###   ########.fr       */
+/*   Updated: 2018/02/13 12:57:58 by rkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ size_t	ft_mapsize(size_t f);
 char	***ft_makebox(size_t t_count, const size_t *coll);
 void	ft_cleanbox(char ***box, const size_t *coll);
 void	ft_fillthebox(const char *str, char ***box, const size_t *coll, \
-    size_t t_count);
+					size_t t_count);
 char	**ft_initmap(size_t size);
 void	ft_cleanmap(char **map);
-void 	ft_fillit(const char *str, size_t t_count);
+void	ft_fillit(const char *str, size_t t_count);
 #endif
