@@ -21,15 +21,15 @@ static void	ft_error(const char *str)
 int			main(int argc, char **argv)
 {
 	int		fd;
-	char	buf[BUF_SIZE + 1];
+	char	buf[BUFF_SIZE + 1];
 	int		red;
 
 	if (argc != 2)
 		ft_error("usage: fillit input_file");
 	if ((fd = open(argv[1], O_RDONLY)) == -1)
 		ft_error("error");
-	ft_bzero(buf, BUF_SIZE);
-	if ((red = read(fd, buf, BUF_SIZE)) == -1)
+	ft_bzero(buf, BUFF_SIZE);
+	if ((red = read(fd, buf, BUFF_SIZE)) == -1)
 	{
 		close(fd);
 		ft_error("error");
