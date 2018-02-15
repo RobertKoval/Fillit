@@ -36,10 +36,10 @@ all: $(NAME)
 
 $(NAME):
 	$(MAKELIB)
-	gcc -c $(SRCS) $(CFLAGS) $(CPPFLAGS)
+	gcc  $(CFLAGS) -c $(SRCS) $(CPPFLAGS)
 	mkdir -p $(OBJ_DIR)
 	mv $(OBJ) $(OBJ_DIR)
-	gcc $(OBJS) $(CFLAGS) -o $(NAME) $(LDFLAGS)
+	gcc $(CFLAGS) $(OBJS) -o $(NAME) $(LDFLAGS)
 
 clean:
 	rm -rf $(OBJ_DIR)
