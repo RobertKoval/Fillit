@@ -28,6 +28,7 @@ int			main(int argc, char **argv)
 		ft_error("usage: fillit input_file");
 	if ((fd = open(argv[1], O_RDONLY)) == -1)
 		ft_error("error");
+	ft_bzero(buf, BUF_SIZE);
 	if ((red = read(fd, buf, BUF_SIZE)) == -1)
 	{
 		close(fd);
