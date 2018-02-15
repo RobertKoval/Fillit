@@ -14,7 +14,7 @@
 # define FILLIT_H
 # include <fcntl.h>
 # include "../libft/includes/libft.h"
-# define BUF_SIZE 550
+# define BUF_SIZE 600
 
 size_t	ft_validfile(const char *str);
 size_t	ft_tetcount(const char *str);
